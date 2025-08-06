@@ -1,109 +1,110 @@
 ````markdown
-# 🐶 Multi-Site Pet Product Scraper (Final Delivery)
+# 🐾 Multi-Site Product Scraper (Demo for Upwork)
 
-A simplified, production-ready multi-site scraper for **NativePet**, **JollyPets**, and **HarryBarker**.
+A **production-ready Python scraper template** for collecting product data from multiple websites.  
+This demo showcases **clean architecture**, **one-click execution**, and **Excel-friendly exports**, suitable for e-commerce or market intelligence projects.
 
 ---
 
 ## 🚀 Features
 
-- ✅ **Per-site one-click run** via `.bat` scripts
-- ✅ **CSV + JSON export** to `data/outputs` (Excel-compatible UTF-8-SIG)
-- ✅ **JollyPets via Shopify JSON API** — fastest & most stable
-- ✅ **NativePet / HarryBarker via Selenium** with optional screenshots
-- ✅ **Fully local execution** — no need for VPN or IP switching
-- ✅ **One-click virtualenv activation & dependency install**
+- ✅ **Multi-site support** — easily extendable to new e-commerce sites
+- ✅ **One-click execution** — via a sample `.bat` script or command line
+- ✅ **CSV & JSON export** — Excel-compatible UTF-8-SIG
+- ✅ **Dynamic content scraping** — ready for Selenium or API-based extraction
+- ✅ **Modular architecture** — easy to maintain and scale
+- ✅ **Optional GitHub Actions integration** for automated testing
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure (Demo Version)
 
 ```text
 .
-├── run_harrybarker_scraper.bat
-├── run_jollypets_scraper.bat
-├── run_nativepet_scraper.bat
+├── README.md
 ├── requirements.txt
-├── data/
-│   └── outputs/                  # CSV & JSON exports
+├── run_example_scraper.bat       # One-click run demo
+├── .env.example                  # Example environment variables
 │
-├── scraper/
+├── scraper/                      # Core scraping logic
+│   ├── engine.py
+│   ├── cli.py                    # Command line entry
 │   └── parsers/
-│       ├── harrybarker_scraper.py
-│       ├── jollypets_scraper.py
-│       └── nativepet_scraper.py
+│       └── example_scraper.py    # Example scraper
 │
-└── README.md
-````
+├── utils/                        # Reusable helper functions
+│   ├── exporter.py
+│   └── logger.py
+│
+├── config/
+│   └── sites.example.json        # Sample config (replace with real)
+│
+└── tests/                        # Unit tests (demo)
+    └── test_example.py
+```
 
 ---
 
 ## ▶️ Usage
 
-### 1️⃣ Run with One Click (Recommended)
-
-Double-click any of these in the project root:
+### 1️⃣ One-Click Run (Windows)
 
 ```bat
-run_harrybarker_scraper.bat
-run_jollypets_scraper.bat
-run_nativepet_scraper.bat
+run_example_scraper.bat
 ```
 
-* Auto-create & activate virtual environment
-* Auto-install dependencies
-* Run selected scraper
-* Open output folder after completion
+Automatically:
+
+1. Creates & activates virtual environment
+2. Installs required dependencies
+3. Runs the example scraper
+4. Saves output to `data/outputs/` (if enabled)
 
 ---
 
-### 2️⃣ Run from Command Line
+### 2️⃣ Command Line Run
 
 ```bash
-# Activate venv
+# 1. Create and activate virtualenv (Windows)
+python -m venv .venv
 .venv\Scripts\activate
 
-# Run one of the scrapers
-python scraper\parsers\harrybarker_scraper.py
-python scraper\parsers\jollypets_scraper.py
-python scraper\parsers\nativepet_scraper.py
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the scraper
+python scraper/cli.py --example
 ```
 
 ---
 
-## 📦 Output
+## 📦 Output (Demo)
 
-* **JSON Snapshot** — Full raw data
-* **CSV Export** — Excel-compatible (UTF-8-SIG, 1 row per product)
+- **JSON Snapshot** — Full raw data
+- **CSV Export** — Excel-friendly UTF-8-SIG
 
-Example output (`data/outputs/`):
+Example output:
 
 ```
-jollypets_products.json
-jollypets_products.csv
-harrybarker_products.json
-harrybarker_products.csv
-nativepet_products.json
-nativepet_products.csv
+example_products.json
+example_products.csv
 ```
 
 ---
 
 ## 📘 Notes
 
-* **JollyPets** uses Shopify API (`/products.json`) for fastest, most reliable scraping
-* **HarryBarker & NativePet** use Selenium for dynamic content
-* Screenshots are optional (enabled in their scripts if needed)
+- This is a **demo version for Upwork proposals**
+- Real client projects will include:
+  - Multiple production scrapers
+  - Configurable site credentials / API keys
+  - Automated export & delivery pipeline
 
 ---
 
-## 🏁 Delivery Ready
+## 🏁 Why This Template
 
-This version is optimized for:
-
-* **Client delivery** — one-click batch scripts
-* **Excel-friendly exports**
-* **Stable scraping** without manual intervention
-
-```
-
+- Ready-to-deliver Python scraper architecture
+- Easy to extend for new sites
+- Demonstrates **professional, production-level code** for clients
+````
